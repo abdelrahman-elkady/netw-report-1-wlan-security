@@ -1,0 +1,27 @@
+\chapter{Authentication and Association}
+\label{chap:auth_association_cycle}
+
+\section{Authentication}
+\label{sec:authentication}
+For a node to connect to an \ac{ap} in the network, it needs to authenticate with the access
+point. After checking the \ac{ssid} of the desired \ac{ap} the authentication process is established. The discovery
+of nearby networks is done throughout a probe process, this is accomplished by sending probe request frames
+to the nearby networks, which mainly holds two pieces of information (\ac{ssid} and data rate).\cite{roshan_leary_2004}
+If one network is compatible with this request, it replies with a probe response frame containing the information for
+the node to connect to the network.\cite{gast_2005}
+
+\newParagraph
+Authentication in 802.11 is used to determine which device is allowed to use the network. This is done by sending
+a management frame which is a part of 802.11 standard. Those management frames contains the authentication algorithm
+indicator, which determines the used authentication systems used in 802.11 which are Open System Authentication and
+Shared Key Authentication.\cite{gast_2005}
+
+\subsection{Open System Authentication}
+\label{sub:open_system_auth}
+In open system authentication, the authentication process is done without verifying the identity of the connection node,
+that means that the \ac{ap} is just accepting a frame from the node to connect to it.
+
+
+\section{Association}
+\label{sec:association}
+The association process is established to setup the association

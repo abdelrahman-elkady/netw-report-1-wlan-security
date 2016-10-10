@@ -18,10 +18,30 @@ Shared Key Authentication.\cite{gast_2005}
 
 \subsection{Open System Authentication}
 \label{sub:open_system_auth}
-In open system authentication, the authentication process is done without verifying the identity of the connection node,
-that means that the \ac{ap} is just accepting a frame from the node to connect to it.
+In open system authentication, the authentication process is done without verifying the identity of the connecting node,
+that means that the \ac{ap} is just accepting a frame from the node to connect to it. Open System Authentication is
+often used with \ac{wep} to ensure privacy, however, \ac{wep} is active in Open System Authentication after the authentication
+and association processes are done.\cite{cwsp-205_2016}
+
+\subsection{Shared Key Authentication}
+\label{sub:shared_key_auth}
+Shared Key Authentication uses \ac{wep} to restrict access to nodes that have a pre-defined key shared between
+the \ac{ap}(s) and the nodes. The Authentication process requires four-way handshake. At the beginning a normal
+authentication request is sent to the \ac{ap}. Then the client node uses its key (which is shared between the nodes
+and the \ac{ap}) to encrypt a payload text in the request. The \ac{ap} receives the request and the payload and
+decrypts it, if the decryption showed a valid payload, a success authentication response is sent, otherwise, the
+response is sent indicating a failed authentication process.\cite{cwsp-205_2016}
 
 
 \section{Association}
 \label{sec:association}
-The association process is established to setup the association
+The Association process is established after a successful authentication between a client node and the \ac{ap}.
+In this process the client node requests to join the \ac{bss} to send and receive data with the network. Initially
+an association request frame is sent to the \ac{ap}. The \ac{ap} then sends an association response indicating whether
+it is allowed for the client node to join the \ac{bss} or not. If the \ac{ap} responded with a success, this response
+will contain some information for the association process. Mainly the response frame contains an \ac{aid} which is a unique
+identifier generated to differentiate between different nodes in the \ac{bss}.\cite{cwsp-205_2016}
+
+
+\section{Association and Authentication States}
+\label{sec:association_authentication_states}

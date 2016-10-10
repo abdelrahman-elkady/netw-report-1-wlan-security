@@ -1,0 +1,38 @@
+\chapter{Authentication Protocols}
+\label{chap:auth_protocol}
+
+\section{Extensible Authentication Protocol (EAP)}
+Extensible Authentication Protocol is a authentication protocol that supports many authentication mechanisms. EAP select the authentication mechanism at a late stage which is the Authentication Phase other than the Link Control Phase. Which allows the Authenticator (The end of the link requiring the authentication) to get more information before finally deciding which mechanism it should use and it allows the use of back end server that implements the different mechanisms(L. Blunk,J. Vollbrecht).
+
+Having the Link Control phase complete, the authenticator starts to authenticate the peer by sending requests which have a type field to show the type of the request. The request maybe Identity, One-Time password, Generic Token Card or maybe a MD5-challenge(L. Blunk, J. Vollbrecht). The peer then sends a response packet contains the type field to answer every request that it has received(L. Blunk,J. Vollbrecht). The authentication ends with either a success packet or a failure packet according to the responses to the requests (L. Blunk,J. Vollbrecht).
+
+
+\section{Advantages of EAP}
+
+EAP supports multiple authentication mechanisms as stated before. it also postpone the mechanism selection process during the Link Control phase. The devices doesn't need to understand the request type yet it can use a back-end host. It only looks for a success packet or failure packet to end the authentication phase(L. Blunk,J. Vollbrecht).
+
+\section{Disadvantages of EAP}
+
+EAP needs a makeover for the LCP as it requires a new authentication type therefore the PPP will need to be modified too. Moreover that changing the PPP authentication model of selecting a specific authentication mechanism during Link Control phase is too much(L. Blunk,J. Vollbrecht).
+
+
+\section{Lightweight Extensible Authentication Protocol (LEAP)}
+Lightweight Extensible Authentication Protocol is  is a password-based authentication technique developed Cisco systems. LEAP has generic WEP keys and wireless authentication between the client and the server and it overcomes the drawback of 802.11 wireless security across extensible authentication support. It employs two MS-CHAP exchanges one to authenticate the network and the other to authenticate the supplicant therefore it is the first protocol to offer mutual authentication (Gast, 2005). LEAP is known for high performance and several security essentials. However it is still vulnerable to dictionary attacks which will be discussed later.
+
+
+
+\section{Protected Extensible Authentication Protocol (PEAP)}
+
+Protected Extensible Authentication Protocol is a certificate-based authentication method on the server side while it is password-based authentication on the client side (Gast, 2005) is designed to allow hybrid authentication. It employs PKI for the server-side authentication and it uses any other EAP authentication type. It uses EAP-MS CHAP v2 which is incompatible with the old RADIUS servers that don't support EAP. As a result of establishing a secure tunnel by server-side authentication, hybrid EAP types can be used for client side authentication. (Cisco Systems,2002).
+
+\section{Temporal Key Integrity Protocol (TKIP)}
+
+Temporal Key Integrity Protocol was firstly introduced as an improvement of WEP. It was implemented to run on WEP hardware which resulted in using WEP encapsulation and the fact that it still relies on mediocre Message Integrity Check which provides inadequate security(Mathy Vanhoef \& Frank Piessens).
+
+TKIP packet consists of three parts (Mathy Vanhoef \& Frank Piessens):
+
+\begin{enumerate}
+  \item A 128-bit temporal key that is shared by both clients and access points.
+  \item An MAC address of a client device.
+  \item A 48-bit initialization vector describes a packet sequence number.
+\end{enumerate}

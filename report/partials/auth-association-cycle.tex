@@ -45,3 +45,19 @@ identifier generated to differentiate between different nodes in the \ac{bss}.\c
 
 \section{Association and Authentication States}
 \label{sec:association_authentication_states}
+The \ac{ap} keeps track of authentication and association state for the client nodes. That results in three
+possible states for each node:
+\begin{enumerate}
+  \item Not authenticated nor associated
+  \item Authenticated but not associated
+  \item Authenticated and associated
+\end{enumerate}
+
+Initially the default state for a new node joining the \ac{bss} is state 1. In state 1 and 2 no data transfer could
+happen between the client node and the network. As shown in Figure \ref{fig:auth_association_states},
+there are different frame classes that can be used in each state. Class 1 Frames are the control frames, they can be used
+in all the three states as they handles the authentication and probing requests. Class 2 Frames are allowed in state 2 and 3,
+those frames are mainly the association request and response frames. Class 3 frames are used when the node is authenticated
+and associated, those frames allows communicating with the distribution system in the \ac{bss}.\cite{gast_2005}
+
+\includefig{0.85}{association-authentication-cycle.png}{Authentication and association states}{fig:auth_association_states}

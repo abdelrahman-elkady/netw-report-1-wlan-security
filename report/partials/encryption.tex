@@ -1,0 +1,26 @@
+\chapter{802.11 Encryption Mechanisms}
+\label{chap:encryption}
+
+\section{Wired Equivalent Privacy (\ac{wep})}
+\label{sec:wep}
+\ac{wep} was the initial standard that was implemented in 802.11 as a security mechanism. Although \ac{wep} was in the
+original standard of IEEE 802.11, it does not show success due to vulnerabilities in the mechanism. Despite being deprecated
+but \ac{wep} is still a valid encryption technique, mainly the problems with \ac{wep} is related with brute force attacks
+which can be avoided with stronger keys. However, there are still weakness points with the \ac{iv} and \ac{icv} which can be cracked
+easily.\cite{edney_arbaugh_2004}
+
+\newParagraph
+\ac{wep} uses ARC4 Cipher cryptography. It uses a static key, \ac{iv} to encrypt the data. The \ac{iv} is a 24-bit key
+that is combined with the static key, that creates a salt for the encryption to eliminate patterns an attacker
+can detect to attack the encryption algorithm. A 24-bit \ac{iv} is small, and this is a critical weakness in the
+\ac{wep} implementation.\cite{edney_arbaugh_2004}
+
+\section{WiFi Protected Access (\ac{wpa})}
+\label{sec:wpa}
+
+\ac{wpa} is an improved security standard released by IEEE and the WiFi Alliance in mid 2014.\cite{gast_2005}
+\ac{wpa} uses \ac{tkip} in order to overcome the problem of weak \ac{iv}s in \ac{wep}. It uses a \ac{psk} in normal
+mode, and it have also an enterprise mode to secure more layers.\cite{mogollon_2007} As \ac{wpa} was developed to handle
+security problems happened within the \ac{wep} standard, an improved standard was released later which is WPA2, this
+standard have more improvements and amendments on the normal \ac{wpa} standard, and it is recommended to be used for more
+security.\cite{garzia}
